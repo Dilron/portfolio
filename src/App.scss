@@ -130,7 +130,7 @@ p{
 }
 
 .display-section{
-	width: 70%;
+	width: 75%;
 	display: flex;
 	flex-direction: column;
 	margin-top: 3.5em;
@@ -149,6 +149,13 @@ p{
 .skills-wrap{
 	width: 100%;
 	display: flex;
-	padding: .5em 18%;
+	padding: .5em 6%;
+	justify-content: space-between;
+}
+
+.contact-wrap{
+	width: 100%;
+	display: flex;
+	padding: .5em 0;
 	justify-content: space-between;
 }
