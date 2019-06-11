@@ -1,0 +1,154 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@font-face {
+  font-family: IBMvga9;
+  src: url("./Flexi_IBM_VGA9_False.woff") format("woff");
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+  font: inherit;
+  font-family: IBMvga9, 'Droid Sans', sans-serif;
+  color: rgb(210, 210, 210);
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+  background: black;
+  padding: 1em 14% 1em 1em;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+h1{
+  font-size: 250%;
+}
+
+h2{
+  font-size: 200%;
+}
+
+h3 {
+	font-size: 160%;
+}
+
+h4 {
+	font-size: 160%;
+	color: green;
+}
+
+i {
+	visibility: hidden;
+}
+
+p{
+	font-size: 160%;
+	line-height: 1.2;
+}
+@keyframes indicator-blink{
+	0% {
+		visibility: visible
+	}
+	50%{
+		visibility: visible
+	}
+	51%{
+		visibility: hidden
+	}
+	100%{
+		visibility: hidden
+	}
+}
+
+.App{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.nav{
+	height: 100%;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	padding: 6em 0;
+	top: 0;
+	left: 1em;
+}
+
+.hover-links{
+	margin: .5em 0;
+}
+
+.hover-links:hover{
+	cursor: pointer;
+	i{
+		animation: 1.25s linear infinite indicator-blink;
+	}
+}
+
+.name-header{
+	height: 5em;
+	width: 100%;
+}
+
+.display-section{
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 3.5em;
+}
+
+.about{
+	
+}
+
+.skills-thumbnail{
+	height: .75em;
+	width: .75em;
+	object-fit: fill;
+}
+
+.skills-wrap{
+	width: 100%;
+	display: flex;
+	padding: .5em 18%;
+	justify-content: space-between;
+}
