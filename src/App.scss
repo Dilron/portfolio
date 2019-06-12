@@ -27,7 +27,7 @@ time, mark, audio, video {
 	font-size: 100%;
   font: inherit;
   font-family: IBMvga9, 'Droid Sans', sans-serif;
-  color: rgb(230, 230, 230);
+  color: rgb(181, 181, 181);
 	vertical-align: baseline;
 	box-sizing: border-box;
 }
@@ -38,7 +38,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
-  background: black;
+  background: rgb(19, 19, 19);
   padding: 1em 10% 1em 1em;
 }
 ol, ul {
@@ -114,7 +114,7 @@ i {
 }
 
 .hover-links{
-	margin: .5em 0;
+	margin: .3em 0;
 }
 
 .hover-links:hover{

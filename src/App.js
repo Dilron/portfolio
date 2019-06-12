@@ -8,6 +8,10 @@ function App() {
         <h3 className='hover-links'>About...<i>{String.fromCharCode(0x258b)}</i></h3>
         <h3 className='hover-links'>Skills...<i>{String.fromCharCode(0x258b)}</i></h3>
         <h3 className='hover-links'>Projects...<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 className='hover-links'>{String.fromCharCode(0x223d)}Fin-s<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 className='hover-links'>{String.fromCharCode(0x223d)}Dijkstra<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 className='hover-links'>{String.fromCharCode(0x223d)}Print Radicals<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 className='hover-links'>{String.fromCharCode(0x223d)}TI Tracker<i>{String.fromCharCode(0x258b)}</i></h3>
         <h3 className='hover-links'>Contact...<i>{String.fromCharCode(0x258b)}</i></h3>
       </section>
       <header className='name-header'>
@@ -115,7 +119,7 @@ function App() {
         <div className='project-wrap dashed-border'>
           <h3>Dijkstra's Algorithm</h3>
           <div className='project-image-container'>
-            <img src='https://i.imgur.com/yU1vqTu.png' alt='dijkstra hex grid' />
+            <img className='project-image' src='https://i.imgur.com/yU1vqTu.png' alt='dijkstra hex grid' />
           </div>
           <div className='project-description'>
             <p>
@@ -131,8 +135,52 @@ function App() {
               find a path across a grid of hexagons, and whether there were 
               already defined methods to do so. A short bit of reasearch later, 
               lo and behold there are many such methods, and after refining 
-              the definition of what I wanted to do, I settled on Dijkstra.
+              the definition of what I wanted to do, I settled on Dijkstra. 
+              In practice, Dijkstra's can be applied to a hex grid by mapping 
+              the hexes in the same way you would a cubic graph, each hex  
+              being a vertex with three identifying coordinates. <br/>
+              <br/>
+              I won't claim to be an expert on the topic, or even to have 
+              a perfect understanding of it, but I'm happy with the implementation 
+              I devised using only a medium article and the wikipedia page. 
+              My application will programmatically generate an array of objects 
+              corresponding to vertices(or 'nodes') of the necessary graph, each 
+              object containing the nodes coordinates, the cost to traverse it, 
+              and identifiers for its neighbors. The function for the algorithm 
+              itself takes in the starting hex and the target hex to build a 
+              path to. Beginning at the starting hex, the process explores 
+              each neighbor, noting what node it came from to reach it and 
+              the cost to get there, adding the unexplored neighbors of that 
+              node to the queue of nodes it will explore, until it finds the 
+              target hex. From there it builds a list of nodes the make up 
+              the path, each node pointing to the next in sequence like 
+              breadcrumbs, until it creates the complete path from end to 
+              start.<br/>
+              <br/>
+              As of this writing(Jun 12th, 2019) the application is incomplete 
+              as I became to busy to finish it while at Dev Mountain. After 
+              graduation I plan to revisit and finalize the implementation 
+              as well as building a demonstration page to show it in practice. 
+              This page will be updated with a link to the demo when it's 
+              complete.<br/>
+              <br/>
+              My resources:<br/>
+              <a href='https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e'>the Medium article</a><br/>
+              <a href='https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm'>the Wiki entry</a><br/>
+              <br/>
+              The repo:<br/>
+              <a href='https://github.com/Dilron/dijkstra-project'>https://github.com/Dilron/dijkstra-project</a>
             </p>
+          </div>
+        </div>
+        <div className='project-wrap dashed-border'>
+          <h3>Print Radicals, a network for 3d printing hobbyists</h3>
+          <div className='project-image-container'>
+            <img className='project-image' src='https://i.imgur.com/dBXowlz.png' alt='print radicals landing page' />
+            <img className='project-image' src='https://i.imgur.com/cc0movD.png' alt='print radicals request form' />
+          </div>
+          <div className='project-description'>
+            <p></p>
           </div>
         </div>
       </section>
