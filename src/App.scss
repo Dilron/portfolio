@@ -27,7 +27,7 @@ time, mark, audio, video {
 	font-size: 100%;
   font: inherit;
   font-family: IBMvga9, 'Droid Sans', sans-serif;
-  color: rgb(210, 210, 210);
+  color: rgb(230, 230, 230);
 	vertical-align: baseline;
 	box-sizing: border-box;
 }
@@ -39,7 +39,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   background: black;
-  padding: 1em 14% 1em 1em;
+  padding: 1em 10% 1em 1em;
 }
 ol, ul {
 	list-style: none;
@@ -71,17 +71,13 @@ h3 {
 
 h4 {
 	font-size: 160%;
-	color: green;
+	color: rgb(0, 147, 0);
 }
 
 i {
 	visibility: hidden;
 }
 
-p{
-	font-size: 160%;
-	line-height: 1.2;
-}
 @keyframes indicator-blink{
 	0% {
 		visibility: visible
@@ -101,6 +97,10 @@ p{
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
+}
+
+.dashed-border{
+	border: 2px dashed red;
 }
 
 .nav{
@@ -137,7 +137,10 @@ p{
 }
 
 .about{
-	
+	p{
+		font-size: 125%;
+		padding: .5em 1em .5em 1em;
+	}
 }
 
 .skills-thumbnail{
@@ -149,13 +152,40 @@ p{
 .skills-wrap{
 	width: 100%;
 	display: flex;
-	padding: .5em 6%;
+	padding: .5em 15% .5em 15%;
 	justify-content: space-between;
+	p{
+		font-size: 125%;
+		line-height: 1.2;
+	}
 }
 
 .contact-wrap{
 	width: 100%;
 	display: flex;
-	padding: .5em 0;
 	justify-content: space-between;
+	padding: .5em 1em;
+	margin-bottom: 5em;
+	p{
+		font-size: 125%;
+	}
+}
+
+.project-wrap{
+	padding: .5em 1em;
+	margin-bottom: 1em;
+	width: 100%;
+}
+
+.project-image-container{
+	width: 100%;
+	height: 15em;
+	display: flex;
+	justify-content: space-around;
+}
+
+.project-image{
+	width: 40%;
+	height: 100%;
+	object-fit: scale-down;
 }
