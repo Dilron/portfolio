@@ -123,7 +123,7 @@ function App() {
           </div>
           <div className='project-description'>
             <p>
-              While Dev Mountain teaches a lot, in 13 weeks there just isn't 
+              While Dev Mountain teaches a lot in 13 weeks, there just isn't 
               enough time to get into the nitty-gritty of computer science 
               topics like algorithms, so in an attempt to further my own 
               education on some common algorithms and how they can be used,
@@ -143,7 +143,7 @@ function App() {
               I won't claim to be an expert on the topic, or even to have 
               a perfect understanding of it, but I'm happy with the implementation 
               I devised using only a medium article and the wikipedia page. 
-              My application will programmatically generate an array of objects 
+              My application programmatically generates an array of objects 
               corresponding to vertices(or 'nodes') of the necessary graph, each 
               object containing the nodes coordinates, the cost to traverse it, 
               and identifiers for its neighbors. The function for the algorithm 
@@ -161,7 +161,7 @@ function App() {
               as I became to busy to finish it while at Dev Mountain. After 
               graduation I plan to revisit and finalize the implementation 
               as well as building a demonstration page to show it in practice. 
-              This page will be updated with a link to the demo when it's 
+              This portfolio page will be updated with a link to the demo when it's 
               complete.<br/>
               <br/>
               My resources:<br/>
@@ -179,10 +179,97 @@ function App() {
             <img className='project-image' src='https://i.imgur.com/dBXowlz.png' alt='print radicals landing page' />
             <img className='project-image' src='https://i.imgur.com/cc0movD.png' alt='print radicals request form' />
           </div>
+          <div className='project-image-container'>
+            <img className='project-image' src='' alt='print radicals landing page' />
+            <img className='project-image' src='' alt='print radicals request form' />
+          </div>
+          <div className='project-description'>
+            <p>
+            Print Radicals is the web application I designed and built as my personal 
+            project for Dev Mountain and was the first full stack application I’ve 
+            ever built. The concept came from interacting with several friends who’d 
+            recently bought 3d printers. Often they’d say they were looking to get more 
+            use out of their printer and would offer to print and ship things to friends 
+            and only charge for shipping or even entirely for free. I wanted to make a 
+            place for users like that to connect with users who wanted something printed 
+            but didn’t otherwise have access to a 3d printer, and to facilitate transactions 
+            between those users.<br/>
+            <br/>
+            On the site, users can browse completed print jobs and posted print requests, 
+            and create an account to post their own requests or make bids on other users 
+            requests to fulfill if they own a printer that can meet the specifications of the 
+            request. When a client user receives a bid, they can review it from their dashboard 
+            and decide whether to decline or accept and pay the submitted cost, which I handled 
+            using Stripe. Once the payment was processed, the information from the client user 
+            and the seller user is processed into an order which both users can track from the site. 
+            The seller has controls that update the status of the order to inform the client and 
+            once the print is complete they can make a post about the finished product. <br/>
+            <br/>
+            In addition to the PostgreSQL, Express, React, Node stack we had learned so far, 
+            I used these additional technologies add functionality:<br/>
+            <br/>
+            <a href='https://stripe.com/'>Stripe</a>:<br/>
+            Stripe is a library that I use in this project to safely handle user payment 
+            information with having to build out the security features myself. Although the 
+            service is relatively easy to integrate, in order to use the full functionality 
+            that I want I need to have a business with documentation that I am otherwise 
+            unable to provide. <br/>
+            <br/>
+            <a href='https://www.npmjs.com/package/react-responsive-carousel'>react-responsive-carousel</a>:<br/>
+            react-responsive-carousel is a library that offers an auto-scrolling carousel 
+            for images or other elements that is quick to integrate and customize. In 
+            future projects if I need a carousel I will likely build the functionality 
+            myself, but the speed with which I could integrate this was very handy.<br/>
+            <br/>
+            Because the payment functionality isn't complete, I won't be hosting the 
+            project unless I have time to go back and finish that aspect of it. For now, 
+            here's the repo:<br/>
+            <br/>
+            <a href='https://github.com/Dilron/fullstack-app'>https://github.com/Dilron/fullstack-app</a>
+            </p>
+          </div>
+        </div>
+        <div className='project-wrap dashed-border'>
+          <h3>TI Tracker, an unofficial tool for Twilight Imperium</h3>
+          <div className='project-image-container'>
+            <img className='project-image' src='https://i.imgur.com/zynQNX8.png' alt='TI tracker landing page' />
+            <img className='project-image' src='https://i.imgur.com/Uq1SahP.png' alt='TI tracker game screen' />
+          </div>
+          <div className='project-description'>
+            <p>
+            TI tracker is a tool to help keep track of information in the somewhat 
+            complicated board game Twilight Imperium. This was my first project at 
+            Dev Mountain and only used, as they called it, ¾ stack,  that being 
+            React, Node, and Express, leaving out the database. Some friends and 
+            I enjoy playing this game when we have the time but keeping track of 
+            everything involved can be daunting even after gaining a thorough 
+            understanding of the rules. My aim for this application was to ease 
+            that burden a bit.<br/>
+            <br/>
+            At its core the functionality of this project is relatively simple, 
+            but it remains one of my prouder achievements even after finishing 
+            other more complex projects. It’s certainly not perfect, even the day 
+            I finished and turned it in, I was already learning from mistakes I 
+            made coding it. But when I look back on it, what strikes me is that 
+            three weeks prior to finishing it, I didn’t know anything about any 
+            of the technologies I was using, but in that time I had already learned 
+            enough identify and build tools to fill a demand.<br/>
+            <br/>
+            The repo:<br/>
+            <a href='https://github.com/Dilron/TI-Tracker-no-db'>https://github.com/Dilron/TI-Tracker-no-db</a>
+            </p>
+          </div>
+        </div>
+        {/* <div className='project-wrap dashed-border'>
+          <h3></h3>
+          <div className='project-image-container'>
+            <img className='project-image' src='' alt='' />
+            <img className='project-image' src='' alt='' />
+          </div>
           <div className='project-description'>
             <p></p>
           </div>
-        </div>
+        </div> */}
       </section>
       <section className='display-section'>
         <h4>contact:{String.fromCharCode(0x223d)}</h4>
