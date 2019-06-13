@@ -2,19 +2,26 @@ import React from 'react';
 import './App.scss';
 
 function App() {
+
+  const scrollHandler = (e) => {
+    const ele = document.getElementById(e)
+    console.log(e)
+    ele.scrollIntoView({block: "start", inline: "nearest", behavior: 'smooth'})
+  }
+
   return (
     <div className="App">
       <section className='nav'>
-        <h3 className='hover-links'>About...<i>{String.fromCharCode(0x258b)}</i></h3>
-        <h3 className='hover-links'>Skills...<i>{String.fromCharCode(0x258b)}</i></h3>
-        <h3 className='hover-links'>Projects...<i>{String.fromCharCode(0x258b)}</i></h3>
-        <h3 className='hover-links'>{String.fromCharCode(0x223d)}Fin-s<i>{String.fromCharCode(0x258b)}</i></h3>
-        <h3 className='hover-links'>{String.fromCharCode(0x223d)}Dijkstra<i>{String.fromCharCode(0x258b)}</i></h3>
-        <h3 className='hover-links'>{String.fromCharCode(0x223d)}Print Radicals<i>{String.fromCharCode(0x258b)}</i></h3>
-        <h3 className='hover-links'>{String.fromCharCode(0x223d)}TI Tracker<i>{String.fromCharCode(0x258b)}</i></h3>
-        <h3 className='hover-links'>Contact...<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 onClick={() => scrollHandler('about')} className='hover-links'>About...<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 onClick={() => scrollHandler('skills')} className='hover-links'>Skills...<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 onClick={() => scrollHandler('projects')} className='hover-links'>Projects...<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 onClick={() => scrollHandler('fin-s')} className='hover-links'>{String.fromCharCode(0x223d)}Fin-s<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 onClick={() => scrollHandler('dijkstra')} className='hover-links'>{String.fromCharCode(0x223d)}Dijkstra<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 onClick={() => scrollHandler('print-radicals')} className='hover-links'>{String.fromCharCode(0x223d)}Print Radicals<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 onClick={() => scrollHandler('ti-tracker')} className='hover-links'>{String.fromCharCode(0x223d)}TI Tracker<i>{String.fromCharCode(0x258b)}</i></h3>
+        <h3 onClick={() => scrollHandler('contact')} className='hover-links'>Contact...<i>{String.fromCharCode(0x258b)}</i></h3>
       </section>
-      <header className='name-header'>
+      <header id='about' className='name-header'>
         <h1>Dillon O'Kelley</h1>
         <h2>Web Developer...{String.fromCharCode(0x258b)} </h2>
       </header>
@@ -33,7 +40,7 @@ function App() {
           that practice to bear in my work.
         </p>
       </section>
-      <section className='skills display-section'>
+      <section id='skills' className='skills display-section'>
         <h4>skills:{String.fromCharCode(0x223d)}</h4>
         <div className='skills-wrap dashed-border'>
           <p>
@@ -62,19 +69,24 @@ function App() {
           </p>
         </div>
       </section>
-      <section className='display-section'>
+      <section id='projects' className='display-section'>
         <h4>my-projects:{String.fromCharCode(0x223d)}</h4>
-        <div className='project-wrap dashed-border'>
+        <div id='fin-s' className='project-wrap dashed-border'>
           <h3>Fin-S, a visualizer for financial literacy</h3>
           <div className='project-image-container'>
-            <img className='project-image' src='https://i.imgur.com/vNFeqbH.png' alt='fin s landing page' />
-            <img className='project-image' src='https://i.imgur.com/zfmO68L.png' alt='fin s dashboard' />
+            <a href="https://i.imgur.com/vNFeqbH.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/vNFeqbH.png' alt='fin s landing page' /></a>
+            <a href="https://i.imgur.com/zfmO68L.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/zfmO68L.png' alt='fin s dashboard' /></a>
+          </div>
+          <div className='project-image-container'>
+            <a href="https://i.imgur.com/Y51DuLq.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/Y51DuLq.png' alt='fin s mobile landing page' /></a>
+            <a href="https://i.imgur.com/OCDmYpy.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/OCDmYpy.png' alt='fin s mobile dashboard' /></a>
+            <a href="https://i.imgur.com/iD4ezTQ.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/iD4ezTQ.png' alt='fin s mobile profile' /></a>
           </div>
           <div className='project-description'>
             <p>
               For my final/group project at Dev Mountain, my group created
               Fin-s, a web application designed to help users visualize their 
-              depts and expenses, and plan their way towards financial autonamy. 
+              debts and expenses, and plan their way towards financial autonomy. 
               Users could enter general information about their finances and see
               a chart of how their deficits were changing over time. Adjustable
               settings allowed the user to see how changes in their payment 
@@ -89,7 +101,7 @@ function App() {
               <br/>
               In two weeks we were able to build our product using PostgreSQL, 
               Express, React, and NodeJS, as well as the following additional 
-              technologies, amoung others:<br/>
+              technologies, among others:<br/>
               <br/>
               <a href='https://fullcalendar.io/'>fullcalendar</a>:<br/>
               A library that allowed us to quickly integrate a calendar view 
@@ -100,8 +112,8 @@ function App() {
               object and integrates with fullcalendar.<br/>
               <br/>
               <a href='https://www.chartjs.org/'>Chart.js</a>:<br/>
-              A library of chart building functions with many seperate 
-              chart types, easy to build, and easy to inegrate with animations.<br/>
+              A library of chart building functions with many separate 
+              chart types, easy to build, and easy to integrate with animations.<br/>
               <br/>
               <a href='https://www.mongodb.com/'>MongoDB</a>:<br/>
               A document oriented database service that we used to augment our 
@@ -116,10 +128,10 @@ function App() {
             </p>
           </div>
         </div>
-        <div className='project-wrap dashed-border'>
+        <div id='dijkstra' className='project-wrap dashed-border'>
           <h3>Dijkstra's Algorithm</h3>
           <div className='project-image-container'>
-            <img className='project-image' src='https://i.imgur.com/yU1vqTu.png' alt='dijkstra hex grid' />
+            <a href="https://i.imgur.com/yU1vqTu.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/yU1vqTu.png' alt='dijkstra hex grid' /></a>
           </div>
           <div className='project-description'>
             <p>
@@ -133,7 +145,7 @@ function App() {
               The initial impetus for the project, harkening back to my 
               hobbies, came from me wondering how a program can be taught to 
               find a path across a grid of hexagons, and whether there were 
-              already defined methods to do so. A short bit of reasearch later, 
+              already defined methods to do so. A short bit of research later, 
               lo and behold there are many such methods, and after refining 
               the definition of what I wanted to do, I settled on Dijkstra. 
               In practice, Dijkstra's can be applied to a hex grid by mapping 
@@ -150,15 +162,15 @@ function App() {
               itself takes in the starting hex and the target hex to build a 
               path to. Beginning at the starting hex, the process explores 
               each neighbor, noting what node it came from to reach it and 
-              the cost to get there, adding the unexplored neighbors of that 
+              the total cost to get there, adding the unexplored neighbors of that 
               node to the queue of nodes it will explore, until it finds the 
-              target hex. From there it builds a list of nodes the make up 
-              the path, each node pointing to the next in sequence like 
+              target hex. From there it builds a list of nodes that make up 
+              the path, each pointing to the next in sequence like 
               breadcrumbs, until it creates the complete path from end to 
               start.<br/>
               <br/>
               As of this writing(Jun 12th, 2019) the application is incomplete 
-              as I became to busy to finish it while at Dev Mountain. After 
+              as I became too busy to finish it while at Dev Mountain. After 
               graduation I plan to revisit and finalize the implementation 
               as well as building a demonstration page to show it in practice. 
               This portfolio page will be updated with a link to the demo when it's 
@@ -173,15 +185,16 @@ function App() {
             </p>
           </div>
         </div>
-        <div className='project-wrap dashed-border'>
+        <div id='print-radicals' className='project-wrap dashed-border'>
           <h3>Print Radicals, a network for 3d printing hobbyists</h3>
           <div className='project-image-container'>
-            <img className='project-image' src='https://i.imgur.com/dBXowlz.png' alt='print radicals landing page' />
-            <img className='project-image' src='https://i.imgur.com/cc0movD.png' alt='print radicals request form' />
+            <a href="https://i.imgur.com/dBXowlz.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/dBXowlz.png' alt='print radicals landing page' /></a>
+            <a href="https://i.imgur.com/cc0movD.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/cc0movD.png' alt='print radicals request form' /></a>
           </div>
           <div className='project-image-container'>
-            <img className='project-image' src='' alt='print radicals landing page' />
-            <img className='project-image' src='' alt='print radicals request form' />
+            <a href="https://i.imgur.com/HpOsoEm.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/HpOsoEm.png' alt='print radicals mobile landing page' /></a>
+            <a href="https://i.imgur.com/pwJcXvg.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/pwJcXvg.png' alt='print radicals mobile orders' /></a>
+            <a href="https://i.imgur.com/5Afazac.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/5Afazac.png' alt='print radicals mobile dashboard' /></a>
           </div>
           <div className='project-description'>
             <p>
@@ -229,11 +242,11 @@ function App() {
             </p>
           </div>
         </div>
-        <div className='project-wrap dashed-border'>
+        <div id='ti-tracker' className='project-wrap dashed-border'>
           <h3>TI Tracker, an unofficial tool for Twilight Imperium</h3>
           <div className='project-image-container'>
-            <img className='project-image' src='https://i.imgur.com/zynQNX8.png' alt='TI tracker landing page' />
-            <img className='project-image' src='https://i.imgur.com/Uq1SahP.png' alt='TI tracker game screen' />
+            <a href="https://i.imgur.com/zynQNX8.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/zynQNX8.png' alt='TI tracker landing page' /></a>
+            <a href="https://i.imgur.com/Uq1SahP.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/Uq1SahP.png' alt='TI tracker game screen' /></a>
           </div>
           <div className='project-description'>
             <p>
@@ -271,7 +284,7 @@ function App() {
           </div>
         </div> */}
       </section>
-      <section className='display-section'>
+      <section id='contact' className='display-section'>
         <h4>contact:{String.fromCharCode(0x223d)}</h4>
         <div className='contact-wrap dashed-border'>
           <p>
