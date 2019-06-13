@@ -65,7 +65,7 @@ function App() {
             <img className='skills-thumbnail' src='https://i.imgur.com/XxtdEou.png' alt='sass thumbnail' /> Sass<br/>
             <img className='skills-thumbnail' src='https://i.imgur.com/fbg4ejN.png' alt='node thumbnail' /> Node JS<br/>
             <img className='skills-thumbnail' src='https://i.imgur.com/808F26L.png' alt='express thumbnail' /> Express<br/>
-            <img className='skills-thumbnail' src='https://i.imgur.com/VRSYaF1.png' alt='git hub thumbnail' /> Git Hub<br/>
+            <img className='skills-thumbnail' src='https://i.imgur.com/VRSYaF1.png' alt='git hub thumbnail' /> Github<br/>
           </p>
         </div>
       </section>
@@ -264,9 +264,9 @@ function App() {
             other more complex projects. It’s certainly not perfect, even the day 
             I finished and turned it in, I was already learning from mistakes I 
             made coding it. But when I look back on it, what strikes me is that 
-            three weeks prior to finishing it, I didn’t know anything about any 
-            of the technologies I was using, but in that time I had already learned 
-            enough identify and build tools to fill a demand.<br/>
+            when I started the program, I didn’t know anything about any 
+            of the technologies I was used. In three weeks I had already 
+            learned enough to design and build this app in thee days.<br/>
             <br/>
             The repo:<br/>
             <a href='https://github.com/Dilron/TI-Tracker-no-db'>https://github.com/Dilron/TI-Tracker-no-db</a>
