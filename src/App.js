@@ -266,7 +266,7 @@ function App() {
             made coding it. But when I look back on it, what strikes me is that 
             when I started the program, I didn’t know anything about any 
             of the technologies I used. In three weeks I had already 
-            learned enough to design and build this app in thee days.<br/>
+            learned enough to design and build this app in three days.<br/>
             <br/>
             The repo:<br/>
             <a href='https://github.com/Dilron/TI-Tracker-no-db'>https://github.com/Dilron/TI-Tracker-no-db</a>
