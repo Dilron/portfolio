@@ -265,7 +265,7 @@ function App() {
             I finished and turned it in, I was already learning from mistakes I 
             made coding it. But when I look back on it, what strikes me is that 
             when I started the program, I didn’t know anything about any 
-            of the technologies I was used. In three weeks I had already 
+            of the technologies I used. In three weeks I had already 
             learned enough to design and build this app in thee days.<br/>
             <br/>
             The repo:<br/>
