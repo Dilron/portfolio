@@ -120,10 +120,7 @@ function App() {
               information storage to more easily interact with fullcalendar and 
               ChartJS.<br/>
               <br/>
-              As of this writing(Jun 11th, 2019) the project is technically 
-              unfinished, but within the next several days it will be completed 
-              and hosted, and I'll update this page with a link to the live site. <br/>
-              <br/>
+              The hosted site: <a href='https://fin-s.us/#/'>https://fin-s.us/#/</a> <br/>
               The repo:<a href='https://github.com/fin-s/fin-s'>https://github.com/fin-s/fin-s</a>
             </p>
           </div>
@@ -156,15 +153,15 @@ function App() {
               a perfect understanding of it, but I'm happy with the implementation 
               I devised using only a medium article and the wikipedia page. 
               My application programmatically generates an array of objects 
-              corresponding to vertices(or 'nodes') of the necessary graph, each 
-              object containing the nodes coordinates, the cost to traverse it, 
+              representing the grid hexes, each object containing the coordinates 
+              of the vertex it represents, the cost to traverse it, 
               and identifiers for its neighbors. The function for the algorithm 
               itself takes in the starting hex and the target hex to build a 
               path to. Beginning at the starting hex, the process explores 
-              each neighbor, noting what node it came from to reach it and 
+              each neighbor, noting what vertex it came from to reach it and 
               the total cost to get there, adding the unexplored neighbors of that 
-              node to the queue of nodes it will explore, until it finds the 
-              target hex. From there it builds a list of nodes that make up 
+              vertex to the queue of vertices it will explore, until it finds the 
+              target hex. From there it builds a list of vertices that make up 
               the path, each pointing to the next in sequence like 
               breadcrumbs, until it creates the complete path from end to 
               start.<br/>
