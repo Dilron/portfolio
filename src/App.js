@@ -1,4 +1,5 @@
 import React from 'react';
+import Dijkstra from './Components/Dijkstra'
 import './App.scss';
 
 function App() {
