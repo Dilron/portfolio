@@ -7,11 +7,15 @@ class Dijkstra extends Component {
             radius: 0,
             grid: [],
             graph: [],
-            hexPathStart: {},
-            hexPathEnd: {},
+            hexPathStart: {id: '(choose a starting point)'},
+            hexPathEnd: {id: '(choose an end point)'},
             hexStartToggle: true,
             path: []
         }
+    }
+
+    componentDidMount(){
+        this.setGrid(this.graph(2))
     }
     //state manager functions
     setRad = (e) => {
@@ -72,6 +76,7 @@ class Dijkstra extends Component {
           let newHex = {
             ...hex,
             id: ++idPrimer,
+            cost: 2,
             neighbors: [{...this.deltaX(hex, true)}, 
               {...this.deltaX(hex, false)}, 
               {...this.deltaY(hex, true)}, 
@@ -196,46 +201,37 @@ class Dijkstra extends Component {
         const {radius, grid, graph, hexPathStart, hexPathEnd, path} = this.state
         return(
             <div className='app-container'>
-                Graph
+                
+                <div className='grid-container'>
+                    {grid.map((ele, i) => {
+                            return(
+                                <div key={i} className='hex-column'>
+                                    {ele.map((hex) => {
+                                        return(
+                                            <div key={hex.id} className='hex-border'>
+                                                <div onClick={() => this.setHexPath(hex)} 
+                                                className='hex-2'>
+                                                    <p>id: {hex.id}</p> <p>x:{hex.x} y:{hex.y} z:{hex.z}</p> <p>cost:{hex.cost}</p>   
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            )
+                    })}
+                </div>
+                {/* Graph
                 <input type='number' 
                 name='radius'
                 onChange={(e) => this.setRad(e)} 
                 />
-                <button onClick={() => this.setGrid(this.graph(radius))} >Create Hex Graph</button>
+                <button onClick={() => this.setGrid(this.graph(radius))} >Create Hex Graph</button> */}
+                Find the shortest route from<br/> {hexPathStart.id} <br/>to <br/>{hexPathEnd.id}<br/>
                 <button onClick={() => this.findPath(graph, hexPathStart, hexPathEnd)} >Find Path </button>
                 <div>
                   Path: {path.reduce((acc, ele) => {
-                    return acc + `${ele.id}, `
+                    return `${ele.id}, ` + acc
                   }, '')}
-                </div>
-                <div className='grid-container'>
-                    {grid.map((ele, i) => {
-                        if(i%2 === 1){
-                            return(
-                                <div key={i} className='hex-column'>
-                                    {ele.map((hex) => {
-                                        return(
-                                            <div onClick={() => this.setHexPath(hex)} 
-                                            key={hex.id} 
-                                            className='hex-1'>id: {hex.id} x:{hex.x} y:{hex.y} z:{hex.z} </div>
-                                        )
-                                    })}
-                                </div>
-                            )
-                        } else {
-                            return(
-                                <div key={i} className='hex-column'>
-                                    {ele.map((hex) => {
-                                        return(
-                                            <div onClick={() => this.setHexPath(hex)} 
-                                            key={hex.id} 
-                                            className='hex-2'>id: {hex.id} x:{hex.x} y:{hex.y} z:{hex.z}</div>
-                                        )
-                                    })}
-                                </div>
-                            )
-                        }
-                    })}
                 </div>
             </div>
         )

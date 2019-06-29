@@ -128,9 +128,10 @@ function App() {
         </div>
         <div id='dijkstra' className='project-wrap dashed-border'>
           <h3>Dijkstra's Algorithm</h3>
-          <div className='project-image-container'>
+          <Dijkstra />
+          {/* <div className='project-image-container'>
             <a href="https://i.imgur.com/yU1vqTu.png" target='_blank' rel='noopener noreferrer'><img className='project-image' src='https://i.imgur.com/yU1vqTu.png' alt='dijkstra hex grid' /></a>
-          </div>
+          </div> */}
           <div className='project-description'>
             <p>
               While Dev Mountain teaches a lot in 13 weeks, there just isn't 

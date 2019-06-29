@@ -221,7 +221,8 @@ i {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	background: black;
 }
 
 .hex-column{
@@ -229,7 +230,15 @@ i {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 9em;
+    width: 108px;
+}
+
+.hex-border{
+	padding: .25em;
+	width: 144px;
+	height: 120px;
+	background: black;
+	clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 }
 
 .hex-1{
@@ -238,8 +247,8 @@ i {
     justify-content: center;
     align-items: center;
     color: white;
-    height: 20px;
-    width: 24px;
+    height: 100%;
+    width: 100%;
     background: black;
     clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 }
@@ -250,8 +259,12 @@ i {
     justify-content: center;
     align-items: center;
     color: white;
-    height: 20px;
-    width: 24px;
+    height: 100%;
+	width: 100%;
+	padding: 0 22px;
     background: red;
-    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+	clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+	p{
+		color: white;
+	}
 }
