@@ -222,7 +222,7 @@ i {
     display: flex;
     justify-content: center;
 	align-items: center;
-	background: black;
+	padding: .5em 0;
 }
 
 .hex-column{
@@ -230,30 +230,22 @@ i {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 108px;
+    width: 150px;
 }
 
 .hex-border{
-	padding: .25em;
-	width: 144px;
-	height: 120px;
-	background: black;
+	padding: .5em;
+	width: 200px;
+	height: 170px;
+	background: rgb(181, 181, 181);
 	clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 }
 
-.hex-1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 100%;
-    width: 100%;
-    background: black;
-    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+.border-path{
+	background: rgb(0, 147, 0);
 }
 
-.hex-2{
+.hex-element{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -261,10 +253,25 @@ i {
     color: white;
     height: 100%;
 	width: 100%;
-	padding: 0 22px;
-    background: red;
+	// padding: 0 22px;
 	clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 	p{
 		color: white;
 	}
+}
+
+.hex-tone-1{
+	background: rgb(180, 0, 0);
+}
+.hex-tone-2{
+	background: rgb(150, 0, 0);
+}
+.hex-tone-3{
+	background: rgb(120, 0, 0);
+}
+.hex-tone-4{
+	background: rgb(90, 0, 0);
+}
+.hex-tone-5{
+	background: rgb(60, 0, 0);
 }
