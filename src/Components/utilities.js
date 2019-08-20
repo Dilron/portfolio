@@ -43,6 +43,8 @@ export function buildGraph(radius) {
             ...hex,
             id: ++idPrimer,
             cost: 1,
+            accCost: 99999,
+            breadCrumb: null,
             neighbors: [{ ...deltaX(hex, true) },
             { ...deltaX(hex, false) },
             { ...deltaY(hex, true) },
