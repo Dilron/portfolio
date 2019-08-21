@@ -39,8 +39,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   background: rgb(19, 19, 19);
-  padding: 1em 10% 1em 1em;
-  min-width: 1070px;
+  padding: 1em;
 }
 ol, ul {
 	list-style: none;
@@ -94,10 +93,8 @@ i {
 	}
 }
 
-.App{
+.content{
 	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
 }
 
 .dashed-border{
@@ -106,13 +103,11 @@ i {
 
 .nav{
 	height: 100%;
-	position: fixed;
+	position: sticky;
+	top: 5em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	// padding: 6em 0;
-	top: 0;
-	left: 1em;
 }
 
 .hover-links{
@@ -129,15 +124,12 @@ i {
 .name-header{
 	height: 5em;
 	width: 100%;
-	// min-width: 1070px;
+	margin-bottom: 3.5em;
 }
 
 .display-section{
-	width: 75%;
 	display: flex;
 	flex-direction: column;
-	margin-top: 3.5em;
-	min-width: 710px;
 }
 
 .about{
@@ -230,13 +222,13 @@ i {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 17.5%;
 }
 
 .hex-border{
 	padding: .5em;
-	width: 200px;
-	height: 170px;
+	width: 133%;
+	height: 170 / 1000 * 100vw;
 	background: rgb(181, 181, 181);
 	clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 }
@@ -253,7 +245,6 @@ i {
     color: white;
     height: 100%;
 	width: 100%;
-	// padding: 0 22px;
 	clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 	p{
 		color: white;
@@ -275,3 +266,4 @@ i {
 .hex-tone-5{
 	background: rgb(60, 0, 0);
 }
+

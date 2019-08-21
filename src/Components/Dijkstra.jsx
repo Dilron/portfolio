@@ -89,9 +89,9 @@ class Dijkstra extends Component {
                   return (
                     <div key={hex.id} className={path.find(ele => ele.id === hex.id) ? 'hex-border border-path' : 'hex-border '} >
                       <div className={`hex-element hex-tone-${hex.cost}`}>
-                        <p>id: {hex.id}</p>
-                        <p>x:{hex.x} y:{hex.y} z:{hex.z}</p>
-                        <p>cost:
+                        <p>id:{hex.id}</p>
+                        {/* <p>x:{hex.x} y:{hex.y} z:{hex.z}</p> */}
+                        <p>cost:  
                           <select disabled={this.state.costEdit} onChange={(e) => this.handleHexCostEdit(hex.id, e.target.value)} >
                             <option value={1} >1</option>
                             <option value={2} >2</option>
