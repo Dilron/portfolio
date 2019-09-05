@@ -27,19 +27,19 @@ function App() {
           <h3 onClick={() => scrollHandler('about')} className='hover-links'>About...<i>{String.fromCharCode(0x258b)}</i></h3>
           <h3 onClick={() => scrollHandler('skills')} className='hover-links'>Skills...<i>{String.fromCharCode(0x258b)}</i></h3>
           <h3 onClick={() => scrollHandler('projects')} className='hover-links'>Projects...<i>{String.fromCharCode(0x258b)}</i></h3>
-          <h3 onClick={() => scrollHandler('fin-s')} className='hover-links'>{String.fromCharCode(0x223d)}Fin-s<i>{String.fromCharCode(0x258b)}</i></h3>
           <h3 onClick={() => scrollHandler('dijkstra')} className='hover-links'>{String.fromCharCode(0x223d)}Dijkstra<i>{String.fromCharCode(0x258b)}</i></h3>
+          <h3 onClick={() => scrollHandler('fin-s')} className='hover-links'>{String.fromCharCode(0x223d)}Fin-s<i>{String.fromCharCode(0x258b)}</i></h3>
           <h3 onClick={() => scrollHandler('print-radicals')} className='hover-links'>{String.fromCharCode(0x223d)}Print Radicals<i>{String.fromCharCode(0x258b)}</i></h3>
           <h3 onClick={() => scrollHandler('ti-tracker')} className='hover-links'>{String.fromCharCode(0x223d)}TI Tracker<i>{String.fromCharCode(0x258b)}</i></h3>
           <h3 onClick={() => scrollHandler('contact')} className='hover-links'>Contact...<i>{String.fromCharCode(0x258b)}</i></h3>
         </section>
-        <section>
+        <section className='displays'>
           <About />
           <Skills />
           <section id='projects' className='display-section'>
             <h4>my-projects:{String.fromCharCode(0x223d)}</h4>
-            <FinS />
             <DijkstraProject />
+            <FinS />
             <PrintRadicals />
             <TITracker />
           </section>

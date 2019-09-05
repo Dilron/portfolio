@@ -11,6 +11,15 @@ export default function DijkstraProject(){
           </div> */}
           <div className='project-description'>
             <p>
+              The Demo:<br/>
+              Use the controls on the hexagons and the buttons above to see a demonstration of
+              this project that I used to learn Dijkstra's algorithm. Set a starting and ending hex
+              hexagon and use the 'Find Path' button to see the application find the shortest
+              route between the two. The length of the path, or the 'Cost', is mesearued across each hex. 
+              Use the 'Edit Costs' button to change the cost to traverse each hex, then use the 'Find Path'
+              button again and see the application adapt the path based on those cost changes.<br/>
+              <br/>
+              The process:<br/>
               While Dev Mountain teaches a lot in 13 weeks, there just isn't
               enough time to get into the nitty-gritty of computer science
               topics like algorithms, so in an attempt to further my own
@@ -45,19 +54,24 @@ export default function DijkstraProject(){
               breadcrumbs, until it creates the complete path from end to
               start.<br />
               <br />
-              As of this writing(Jun 12th, 2019) the application is incomplete
-              as I became too busy to finish it while at Dev Mountain. After
-              graduation I plan to revisit and finalize the implementation
-              as well as building a demonstration page to show it in practice.
-              This portfolio page will be updated with a link to the demo when it's
-              complete.<br />
+              There are some aspects of this implementation that aren't 100% to 
+              the letter of Dijkstra's algorithm, but for me that's part of the reason 
+              I'm proud to show it off. I was able to learn the method and adapt it to 
+              my specific use case while retaining good performance. This project ended 
+              up being interesting enough for me that I've continued to educate myself 
+              on computer science concepts. I've even given a talk on appoaching computer 
+              science as someone without a formal education in it for the UtahJS meetup.com 
+              group.<br />
               <br />
               My resources:<br />
               <a href='https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e'>the Medium article</a><br />
               <a href='https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm'>the Wiki entry</a><br />
               <br />
               The repo:<br />
-              <a href='https://github.com/Dilron/dijkstra-project'>https://github.com/Dilron/dijkstra-project</a>
+              <a href='https://github.com/Dilron/dijkstra-project'>https://github.com/Dilron/dijkstra-project</a><br/>
+              <br/>
+              The event I spoke at:<br/>
+              <a href='https://www.meetup.com/UtahJS/events/cpqwbryzmbhb/'>https://www.meetup.com/UtahJS/events/cpqwbryzmbhb/</a><br/>
             </p>
           </div>
         </div>

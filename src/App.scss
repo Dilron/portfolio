@@ -78,6 +78,28 @@ i {
 	visibility: hidden;
 }
 
+button {
+	font-family: inherit;
+	border: 1px solid black;
+	background: rgb(181, 181, 181);
+	font-size: 100%;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+select{
+	background: rgb(181, 181, 181);
+	border: none;
+	margin-left: .4em;
+}
+
+select:disabled{
+	color: rgb(74, 74, 74);
+	// background: rgba(176, 176, 176, 0.324);
+}
+
 @keyframes indicator-blink{
 	0% {
 		visibility: visible
@@ -95,6 +117,7 @@ i {
 
 .content{
 	display: flex;
+	justify-content: space-between;
 }
 
 .dashed-border{
@@ -103,11 +126,16 @@ i {
 
 .nav{
 	height: 100%;
+	width: 23%;
 	position: sticky;
 	top: 5em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+.displays{
+	width: 75%;
 }
 
 .hover-links{
@@ -208,6 +236,12 @@ i {
 	}
 }
 
+.djSubSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 
 .grid-container {
     width: 100%;
@@ -242,12 +276,12 @@ i {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(181, 181, 181);
     height: 100%;
 	width: 100%;
 	clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 	p{
-		color: white;
+		color: rgb(211, 211, 211);
 	}
 }
 
@@ -255,15 +289,15 @@ i {
 	background: rgb(180, 0, 0);
 }
 .hex-tone-2{
-	background: rgb(150, 0, 0);
+	background: rgb(160, 0, 0);
 }
 .hex-tone-3{
-	background: rgb(120, 0, 0);
+	background: rgb(140, 0, 0);
 }
 .hex-tone-4{
-	background: rgb(90, 0, 0);
+	background: rgb(120, 0, 0);
 }
 .hex-tone-5{
-	background: rgb(60, 0, 0);
+	background: rgb(100, 0, 0);
 }
 

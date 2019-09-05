@@ -10,7 +10,8 @@ class Dijkstra extends Component {
       hexPathEnd: null,
       hexStartToggle: true,
       path: [],
-      costEdit: true
+      costEdit: true,
+      cost: ''
     }
   }
 
@@ -22,21 +23,21 @@ class Dijkstra extends Component {
 
   setGrid = () => {
     const setGraph = buildGraph(2)
-    this.setState({graph: setGraph })
+    this.setState({ graph: setGraph })
   }
 
   handleSetStart = (hex) => {
-    this.setState({hexPathStart: {...hex}})
+    this.setState({ hexPathStart: { ...hex } })
   }
 
   handleSetEnd = (hex) => {
-    this.setState({hexPathEnd: {...hex}})
+    this.setState({ hexPathEnd: { ...hex } })
   }
 
   handleHexCostEdit = (hexId, cost) => {
     const newGraph = this.state.graph
     newGraph[newGraph.findIndex((ele) => ele.id === hexId)].cost = cost
-    this.setState({graph: [...newGraph]})
+    this.setState({ graph: [...newGraph] })
   }
 
   handleToggleEdit = () => {
@@ -45,7 +46,7 @@ class Dijkstra extends Component {
 
   //seems to be a problem with object copies retaining old values, might need lodash for this shit
   findAgain = () => {
-    const {graph, hexPathStart, hexPathEnd} = this.state;
+    const { graph, hexPathStart, hexPathEnd } = this.state;
     let procGraph = [...graph];
     let start = procGraph.find(ele => ele.id === hexPathStart.id);
     let end = procGraph.find(ele => ele.id === hexPathEnd.id);
@@ -56,29 +57,29 @@ class Dijkstra extends Component {
       let hex = processing.shift();
       hex.neighbors.forEach(ele => {
         let neighbor = procGraph.find(pg => pg.x === ele.x && pg.y === ele.y && pg.z === ele.z);
-        if (neighbor) 
-        {
-          if (hex.accCost + neighbor.cost < neighbor.accCost){
+        if (neighbor) {
+          if (hex.accCost + neighbor.cost < neighbor.accCost) {
             neighbor.accCost = hex.accCost + neighbor.cost
             neighbor.breadCrumb = hex.id
             processing.push(neighbor)
           }
         }
       })
-    } while(processing.length > 0)
+    } while (processing.length > 0)
     let foundPath = [end];
-    do{
+    let foundCost = end.accCost
+    do {
       foundPath.push(procGraph.find(ele => ele.id === foundPath[foundPath.length - 1].breadCrumb))
-    } while(foundPath[foundPath.length - 1].breadCrumb)
+    } while (foundPath[foundPath.length - 1].breadCrumb)
     procGraph.forEach(ele => {
       ele.breadCrumb = null;
       ele.accCost = 9999;
     })
-    this.setState({path: [...foundPath], graph: procGraph})
+    this.setState({ path: [...foundPath], graph: procGraph, cost: foundCost })
   }
 
   render() {
-    const { graph, hexPathStart, hexPathEnd, path, costEdit } = this.state
+    const { graph, hexPathStart, hexPathEnd, path, costEdit, cost } = this.state
     return (
       <div className='app-container'>
         <section className='grid-container'>
@@ -91,7 +92,7 @@ class Dijkstra extends Component {
                       <div className={`hex-element hex-tone-${hex.cost}`}>
                         <p>id:{hex.id}</p>
                         {/* <p>x:{hex.x} y:{hex.y} z:{hex.z}</p> */}
-                        <p>cost:  
+                        <p>cost:
                           <select disabled={this.state.costEdit} onChange={(e) => this.handleHexCostEdit(hex.id, e.target.value)} >
                             <option value={1} >1</option>
                             <option value={2} >2</option>
@@ -110,13 +111,24 @@ class Dijkstra extends Component {
             )
           })}
         </section>
-        <section>
-          Start: {hexPathStart ? hexPathStart.id : '  '}  End: {hexPathEnd ? hexPathEnd.id : '  '}<br />
-          Path: {path.reduce((acc, ele) => {
-            return `${ele.id}, ` + acc
-          }, '')} <br/>
-          <button disabled={!costEdit} onClick={() => this.findAgain()} >Find Path </button>
-          <button onClick={this.handleToggleEdit} >Edit Costs</button>
+        <section className='djSubSection'>
+          <p>
+            Start: {hexPathStart ? hexPathStart.id : '  '} -
+            End: {hexPathEnd ? hexPathEnd.id : '  '}
+          </p>
+          <p>
+            Path: {path.reduce((acc, ele) => {
+              return `${ele.id}, ` + acc
+            }, '')}
+          </p>
+          <p>
+            Cost: {cost}
+          </p>
+          <div>
+            <button disabled={!costEdit} onClick={() => this.findAgain()} >Find Path </button>
+            <button onClick={this.handleToggleEdit} >Edit Costs</button>
+          </div>
+          
           {/* <button onClick={this.setGrid} >Reset Grid</button> */}
         </section>
       </div>
