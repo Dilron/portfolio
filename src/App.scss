@@ -39,8 +39,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   background: rgb(19, 19, 19);
-  padding: 1em 10% 1em 1em;
-  min-width: 1070px;
+  padding: 1em;
 }
 ol, ul {
 	list-style: none;
@@ -79,6 +78,28 @@ i {
 	visibility: hidden;
 }
 
+button {
+	font-family: inherit;
+	border: 1px solid black;
+	background: rgb(181, 181, 181);
+	font-size: 100%;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+select{
+	background: rgb(181, 181, 181);
+	border: none;
+	margin-left: .4em;
+}
+
+select:disabled{
+	color: rgb(74, 74, 74);
+	// background: rgba(176, 176, 176, 0.324);
+}
+
 @keyframes indicator-blink{
 	0% {
 		visibility: visible
@@ -94,10 +115,9 @@ i {
 	}
 }
 
-.App{
+.content{
 	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
+	justify-content: space-between;
 }
 
 .dashed-border{
@@ -106,13 +126,16 @@ i {
 
 .nav{
 	height: 100%;
-	position: fixed;
+	width: 23%;
+	position: sticky;
+	top: 5em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	// padding: 6em 0;
-	top: 0;
-	left: 1em;
+}
+
+.displays{
+	width: 75%;
 }
 
 .hover-links{
@@ -129,15 +152,12 @@ i {
 .name-header{
 	height: 5em;
 	width: 100%;
-	// min-width: 1070px;
+	margin-bottom: 3.5em;
 }
 
 .display-section{
-	width: 75%;
 	display: flex;
 	flex-direction: column;
-	margin-top: 3.5em;
-	min-width: 710px;
 }
 
 .about{
@@ -216,12 +236,19 @@ i {
 	}
 }
 
+.djSubSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 
 .grid-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	padding: .5em 0;
 }
 
 .hex-column{
@@ -229,29 +256,48 @@ i {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 9em;
+    width: 17.5%;
 }
 
-.hex-1{
+.hex-border{
+	padding: .5em;
+	width: 133%;
+	height: 170 / 1000 * 100vw;
+	background: rgb(181, 181, 181);
+	clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
+
+.border-path{
+	background: rgb(0, 147, 0);
+}
+
+.hex-element{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    height: 20px;
-    width: 24px;
-    background: black;
-    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+    color: rgb(181, 181, 181);
+    height: 100%;
+	width: 100%;
+	clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+	p{
+		color: rgb(211, 211, 211);
+	}
 }
 
-.hex-2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 20px;
-    width: 24px;
-    background: red;
-    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+.hex-tone-1{
+	background: rgb(180, 0, 0);
 }
+.hex-tone-2{
+	background: rgb(160, 0, 0);
+}
+.hex-tone-3{
+	background: rgb(140, 0, 0);
+}
+.hex-tone-4{
+	background: rgb(120, 0, 0);
+}
+.hex-tone-5{
+	background: rgb(100, 0, 0);
+}
+
