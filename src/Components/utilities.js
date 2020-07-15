@@ -1,3 +1,4 @@
+//this file contains all the logic used to create and record the hex graph for the Dijkstra component
 
 // delta functions calculate new coords for hexes adjacent to the given hex(node). direction(path) is a boolean correllating to the direction of the new hex along that axis, 'positive' or 'negative' being based on the arbitrary decision I made about which sides of the axis would be which
 function deltaX(node, path) {

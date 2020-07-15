@@ -44,15 +44,18 @@ class Dijkstra extends Component {
     this.setState({ costEdit: !this.state.costEdit })
   }
 
-  //seems to be a problem with object copies retaining old values, might need lodash for this shit
-  findAgain = () => {
+  //this function is the actual logic of my implementation of Dijkstras algorithm. It pulls user entered values from state to find the shortest path from start to end, as explained in the entry for it in my portfolio
+  findPath = () => {
     const { graph, hexPathStart, hexPathEnd } = this.state;
+    //reference variables
     let procGraph = [...graph];
     let start = procGraph.find(ele => ele.id === hexPathStart.id);
     let end = procGraph.find(ele => ele.id === hexPathEnd.id);
     start.accCost = 0;
+    //the processing array will hold the queue of hex nodes that need to have a distance calculated
     let processing = [start];
-    console.log('log from pathing start: ', graph, hexPathStart, hexPathEnd, procGraph, start, end);
+    // the first do/while advances through the queue of hex nodes, identifying each nodes neighbors and updating their cost if it is less than their previously calculated cost. If their cost was updated, it also updates their 'breadcrumb' to point to the node they were updated from and adds them back to the processing array
+    //this method actually ends up finding the shortest path from the start to all nodes in the graph
     do {
       let hex = processing.shift();
       hex.neighbors.forEach(ele => {
@@ -66,11 +69,14 @@ class Dijkstra extends Component {
         }
       })
     } while (processing.length > 0)
+    //foundPath is the array that will be updated to record the shortest path from start to end
     let foundPath = [end];
     let foundCost = end.accCost
+    //the second do/while pushes hexes into the foundPath array based on the breadcrumb value assigned by the first loop until it has created the whole path from end to start
     do {
       foundPath.push(procGraph.find(ele => ele.id === foundPath[foundPath.length - 1].breadCrumb))
     } while (foundPath[foundPath.length - 1].breadCrumb)
+    //this process resets the values of the hexes on the graph so they will not corrupt future runs
     procGraph.forEach(ele => {
       ele.breadCrumb = null;
       ele.accCost = 9999;
@@ -125,7 +131,7 @@ class Dijkstra extends Component {
             Cost: {cost}
           </p>
           <div>
-            <button disabled={!costEdit} onClick={() => this.findAgain()} >Find Path </button>
+            <button disabled={!costEdit} onClick={() => this.findPath()} >Find Path </button>
             <button onClick={this.handleToggleEdit} >Edit Costs</button>
           </div>
           
