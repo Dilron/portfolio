@@ -51,7 +51,7 @@ export default function FinS(){
               information storage to more easily interact with fullcalendar and
               ChartJS.<br />
               <br />
-              The hosted site: <a href='https://fin-s.us/#/'>https://fin-s.us/#/</a> <br />
+              By the end of the project, we had the site hosted and ready to use but since then it's been taken down. <br />
               The repo:<a href='https://github.com/fin-s/fin-s'>https://github.com/fin-s/fin-s</a>
             </p>
           </div>
